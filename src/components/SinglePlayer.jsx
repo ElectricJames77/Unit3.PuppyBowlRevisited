@@ -57,6 +57,10 @@ const SinglePlayer = () => {
         }
     };
 
+    const handleReturn = () => {
+        navigate(`/players`)
+    }
+
     return (
         <>
             {error ? (
@@ -78,10 +82,18 @@ const SinglePlayer = () => {
                         Breed: {player.breed}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
+                        Status: {player.status}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
                         ID:    {player.id}
                     </Typography>
                   </CardContent>
                   <CardActions>
+                    <Chip
+                    label="Return to Player List"
+                    onClick={handleReturn}
+                    variant="outlined"
+                    />
                     <Chip
                     label="Delete this Player"
                     onClick={handleClick}
